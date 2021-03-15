@@ -9,7 +9,7 @@
 * [Исправление ошибки Python: `Python is not installed or not found on PATH`](#исправление-ошибки-python-python-is-not-installed-or-not-found-on-path)
 * [Загрузочный диск Windows не видит APFS диски](#загрузочныи-диск-windows-не-видит-apfs-диски)
 * [Неправильное разрешение в OpenCore](#неправильное-разрешение-в-opencore)
-* [Не отображается Windows/BootCamp диск в меню выбора](#не-отображается-windows-bootcamp-диск-в-меню-выбора)
+* [Не отображается диск с Windows/BootCamp в меню выбора](#не-отображается-диск-с-windows-bootcamp-в-меню-выбора)
 * [Неправильно выбирается загрузочный диск](#неправильно-выбирается-загрузочныи-диск)
 * [Загрузка Windows приводит к синему экрану смерти или крашам Linux](#загрузка-windows-приводит-к-синему-экрану-смерти-или-крашам-linux)
 * [Ошибка при загрузке Windows: `OCB: StartImage failed - Already started`](#ошибка-при-загрузке-windows-ocb-startimage-failed-already-started)
@@ -42,7 +42,7 @@ fs0:\EFI\OC\Tools> acpidump.efi -b -n DSDT -z
 
 ## Исправление ошибки Python: `Python is not installed or not found on PATH`
 
-Просто исправить - загрузите и установите последнюю версию Python:
+Просто исправить — загрузите и установите последнюю версию Python:
 
 * [Ссылка для macOS](https://www.python.org/downloads/macos)
 * [Ссылка для Windows](https://www.python.org/downloads/windows/)
@@ -54,16 +54,16 @@ fs0:\EFI\OC\Tools> acpidump.efi -b -n DSDT -z
 
 ## Загрузочный диск Windows не видит APFS диски
 
-* Устаревшие драйверы BootCamp(обычно версия 6.0 идёт с brigadier, утилита BootCamp в macOS предоставляет более новую версию, к примеру, 6.1). CorpNewt «форкнул» brigadier для устранения этих проблем: [brigadier от CorpNewt](https://github.com/corpnewt/brigadier)
+* Устаревшие драйверы BootCamp(обычно версия 6.0 идёт с brigadier, утилита BootCamp в macOS предоставляет более новую версию, к примеру, 6.1). CorpNewt форкнул brigadier для устранения этих проблем: [brigadier от CorpNewt](https://github.com/corpnewt/brigadier)
 
 ## Неправильное разрешение в OpenCore
 
 * Следуйте [Исправление разрешения и Verbose](https://dortania.github.io/OpenCore-Post-Install/cosmetic/verbose.html) для правильной настройки, установите `UIScale` в `02` на HiDPI
-* Пользователи также приметели, что установка `ConsoleMode` в Max иногда даёт сбои, если оставить его пустым, это может помочь
+* Пользователи также приметили, что установка `ConsoleMode` в Max иногда даёт сбои, если оставить его пустым, это может помочь
 
-## Не отображается Windows/BootCamp диск в меню выбора
+## Не отображается диск с Windows/BootCamp в меню выбора
 
-Итак, в OpenCore, мы подметим, что Legacy установка Windows не поддерживается, только UEFI. Большинство установок сейчас - UEFI, но те, которые осуществленны с Ассистентом BootCamp - являются Legacy, поэтому вам придётся найти другие средства создания установщика(Google ваш друг). Это также означает, что MBR/Hybrid разделы также сломаны, поэтому вам необходимо форматировать диск на который вы хотите установить с помощью Дисковой утилиты. См. [Руководство по Multiboot](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/), чтобы получить лучший результат ваших действий.
+Итак, в OpenCore, мы подметим, что Legacy установка Windows не поддерживается, только UEFI. Большинство установок сейчас - UEFI, но те, которые осуществлены с Ассистентом BootCamp - являются Legacy, поэтому вам придётся найти другие средства создания установщика(Google ваш друг). Это также означает, что MBR/Hybrid разделы также сломаны, поэтому вам необходимо форматировать диск на который вы хотите установить с помощью Дисковой утилиты. См. [Руководство по Multiboot](https://hackintosh-multiboot.gitbook.io/hackintosh-multiboot/), чтобы получить лучший результат ваших действий.
 
 Теперь перейдём к устранению неполадок:
 
@@ -109,4 +109,4 @@ iasl * [вставьте сюда все ACPI файлы]
 Это из-за того, что macOS использует UTC, а Windows полагается на GMT, поэтому вам необходимо заставить одну ОС использовать другой способ измерения времени. Мы настоятельно рекомендуем модифицировать Windows, поскольку это гораздо менее разрушительно и болезненно:
 
 * [Установка утилит Bootcamp](https://dortania.github.io/OpenCore-Post-Install/multiboot/bootcamp.html)
-* [Модификация реестера Windows (на английском)](https://superuser.com/q/494432)
+* [Модификация реестра Windows (на английском)](https://superuser.com/q/494432)

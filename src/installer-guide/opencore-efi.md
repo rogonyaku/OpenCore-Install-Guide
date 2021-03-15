@@ -2,7 +2,7 @@
 
 * Поддерживаемая версия: 0.6.7
 
-Чтобы настроить структуру папок OpenCore, вам нужно взять EFI папку, найденную в [релизах OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases/). Обратите внимание, что они будут находится в IA32 или X64 папках; первая для 32-битных прошивок, вторая для 64-битных прошивок:
+Чтобы настроить структуру папок OpenCore, вам нужно взять EFI папку, найденную в [релизах OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases/). Обратите внимание, что они будут находиться в IA32 или X64 папках; первая для 32-битных прошивок, вторая для 64-битных прошивок:
 
 ![](../../img/installer-guide/opencore-efi-md/ia32-x64.png)
 
@@ -52,15 +52,15 @@
 * OpenHfsPlus.efi
   * Драйвер HFS Plus с открытым исходным кодом, довольно медленный, поэтому мы не рекомендуем его использовать, если вы не знаете, что делаете.
 * OpenPartitionDxe.efi
-  * Required to boot recovery on OS X 10.7 through 10.9
-    * Note: OpenDuet users(ie. without UEFI) will have this driver built-in, not requiring it
+  * Требуется для загрузки рекавери на OS X 10.7-10.9
+    * Примечание: У пользователей OpenDuet (т. е. без UEFI) этот драйвер уже встроен, так что он не нужен
 * OpenUsbKbDxe.efi
   * Используется для меню выбора OpenCore на **старых системах, работающих под управлением DuetPkg** [не рекомендуется и даже вредно на Ivy Bridge и новее](https://applelife.ru/threads/opencore-obsuzhdenie-i-ustanovka.2944066/page-176#post-856653)
 * Ps2KeyboardDxe.efi + Ps2MouseDxe.efi
   * Довольно очевидно, когда это вам нужно, пользователям USB-клавиатуры и мыши это не нужно
   * Напоминание: PS2 ≠ USB
 * UsbMouseDxe.efi
-  * Тоже самое, что и с OpenUsbKbDxe; должно использоваться только на Legacy системах, работающих под управлением DuetPkg
+  * То же самое, что и с OpenUsbKbDxe; должно использоваться только на Legacy системах, работающих под управлением DuetPkg
 * XhciDxe.efi
   * Используется на Sandy Bridge и старее, когда XCHI драйвер не встроен в прошивку
   * Требуется только в том случае, если вы используете карту расширения USB 3.0 на старом компьютере
@@ -87,7 +87,7 @@
 
 **Заметка**:
 
-* SSDT и изменный (custom) DSDT(`.aml`) идут в папку ACPI
+* SSDT и измененный (custom) DSDT(`.aml`) идут в папку ACPI
 * Кексты(`.kext`) идут в папку Kexts
 * Драйверы прошивки(`.efi`) идут в папку Drivers
 

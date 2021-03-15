@@ -201,7 +201,7 @@ To disable SIP, users have 2 choices:
 
 * Disable via Recovery
 
-* [Disable via config.plist](./extended/post-issues.md#disabling-sip)
+* [Disable via config.plist](./extended/post-issues.md#отключение-sip)
 
 Generally we highly recommend recovery to easily revert with NVRAM reset, however some users may require SIP to be disabled through NVRAM wipes as well.
 
@@ -365,7 +365,7 @@ csrutil authenticated-root enable # Big Sur+
 ```
 
 * config.plist changes(if previously changed via config.plist):
-  * [Enabling via config.plist](./extended/post-issues.md#disabling-sip)
+  * [Enabling via config.plist](./extended/post-issues.md#отключение-sip)
   
 #### 4. Clean boot-args
 
