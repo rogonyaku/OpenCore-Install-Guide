@@ -42,7 +42,7 @@ fs0:\EFI\OC\Tools> acpidump.efi -b -n DSDT -z
 
 ## Исправление ошибки Python: `Python is not installed or not found on PATH`
 
-Просто исправить — загрузите и установите последнюю версию Python:
+Это просто исправить. Загрузите и установите последнюю версию Python:
 
 * [Ссылка для macOS](https://www.python.org/downloads/macos)
 * [Ссылка для Windows](https://www.python.org/downloads/windows/)
@@ -92,7 +92,7 @@ fs0:\EFI\OC\Tools> acpidump.efi -b -n DSDT -z
 
 ## iASL warning, # unresolved
 
-Если вы пытаетесь декомпилировать ваш DSDT и получаете ошибку подобную этой:
+Если вы пытаетесь декомпилировать свой DSDT и получаете ошибку подобную этой:
 
 ```
 iASL Warning: There were 19 external control methods found during disassembly, but only 0 were resolved (19 unresolved)

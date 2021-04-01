@@ -696,11 +696,11 @@ SmUUID:       DEA17B2D-2F9F-4955-B266-A74C47678AD3
 * Secure Boot
 * Serial/COM Port
 * Parallel Port
-* Compatibility Support Module (CSM)(**Должно быть выключено, поскольку ошибки GPU, такие как `gIO` являются обычным явлением, когда эта опция включена**)
+* Compatibility Support Module (CSM) (**Должно быть выключено, поскольку ошибки GPU, такие как `gIO` являются обычным явлением, когда эта опция включена**)
 
 ### Включите
 
-* Above 4G decoding(**Это должно быть включено, если вы не можете найти эту опцию, добавьте `npci=0x2000` в boot-args. Не включайте одновременно эту опцию и npci**)
+* Above 4G decoding (**Это должно быть включено, если вы не можете найти эту опцию, добавьте `npci=0x2000` в boot-args. Не включайте одновременно эту опцию и npci**)
 * EHCI/XHCI Hand-off
 * OS type: Windows 8.1/10 UEFI Mode
 * SATA Mode: AHCI
