@@ -106,11 +106,11 @@ Really, that's way uncool.
 
 ![](../../img/troubleshooting/boot-md/9-audio.png)
 
-А вот тут и вступает аудиодрайвер Apple, и здесь AppleALC сияет. Обычно здесь редко можно увидеть проблемы, но если вы их увидете, попробуйте отключить AppleALC и любые другие кексты, связанные со звуком.
+А вот тут и вступает аудиодрайвер Apple, и здесь AppleALC сияет. Обычно здесь редко можно увидеть проблемы, но если вы их увидите, попробуйте отключить AppleALC и любые другие кексты, связанные со звуком.
 
 ![](../../img/troubleshooting/boot-md/10-GPU.png)
 
-И здесь мы подбираемся к инциализации драйвера графического процессора, и где WhateverGreen тоже творит свою магию. Обычно, ошибки здесь связаны с графическим процессором, а не с самим WhateverGreen. Основные виновники:
+И здесь мы подбираемся к инициализации драйвера графического процессора, и где WhateverGreen тоже творит свою магию. Обычно, ошибки здесь связаны с графическим процессором, а не с самим WhateverGreen. Основные виновники:
 
 * [Зависает на или рядом с `IOConsoleUsers: gIOScreenLock...`](./extended/kernel-issues.md#зависает-на-или-рядом-с-ioconsoleusers-gioscreenlock-giolockstate-3)
 * [Черный экран после `IOConsoleUsers: gIOScreenLock...` на Navi](./extended/kernel-issues.md#black-screen-after-ioconsoleusers-gioscreenlock-on-navi)

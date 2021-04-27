@@ -4,7 +4,7 @@
 
 ::: tip Напоминание
 
-**На этой странице будет небольшое обсуждение того, что именно вам нужно подготовить к обновлению на Big Sur, более подробнее о том, что изменилось в Big Sur, можно найти здесь:**
+**На этой странице будет небольшое обсуждение того, что именно вам нужно подготовить к обновлению на Big Sur. Подробнее о том, что изменилось в Big Sur, можно найти здесь:**
 
 * [Что нового в macOS 11, Big Sur!](https://dortania.github.io/hackintosh/updates/2020/11/12/bigsur-new.html)
 
@@ -37,7 +37,7 @@
 
 ### Поддерживаемые SMBIOS
 
-В Big Sur перестались поддерживаться некоторые SMBIOS на Ivy Bridge и Haswell, так что смотрите ниже, чтобы ваш не перестал поддерживаться:
+В Big Sur перестали поддерживаться некоторые SMBIOS на Ivy Bridge и Haswell, так что смотрите ниже, чтобы ваш не перестал поддерживаться:
 
 * iMac14,3 и старее
   * Примечание: iMac14,4 все еще поддерживается
@@ -99,7 +99,7 @@ SMBIOS поддерживаемые в macOS Big Sur:
 
 ### Обновление кекстов, загрузчика и config.plist до актуального
 
-Убедитесь, что у вас последняя версия OpenCore, кекстов и config.plist, чтобы не возникало каких-либо проблем с совместимостью. Вы можете просто загрузить и обновить OpenCore и кексты, как написано здесь здесь:
+Убедитесь, что у вас последняя версия OpenCore, кекстов и config.plist, чтобы не возникало каких-либо проблем с совместимостью. Вы можете просто загрузить и обновить OpenCore и кексты, как написано здесь:
 
 * [Обновление OpenCore и macOS](https://dortania.github.io/OpenCore-Post-Install/universal/update.html)
 
@@ -150,7 +150,7 @@ nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version
   * Форсированная загрузка определенного драйвера с помощью `brcmfx-driver=` может помочь
     * Например, пользователям BCM94352Z может понадобиться `brcmfx-driver=2` в boot-args для устранения этой проблемы, другим чипсетам понадобятся другие переменные.
   * Установка MaxKernel в значении 19.9.9 для AirPortBrcm4360_Injector.kext может помочь. Больше информации [в этом репозитории](https://github.com/acidanthera/AirportBrcmFixup/blob/master/README.md#please-pay-attention)
-* Подержка SATA
+* Поддержка SATA
   * Нарушение поддержки SATA произошло из-за того, что Apple удалила класс AppleIntelPchSeriesAHCI из AppleAHCIPort.kext
   * Чтобы решить эту проблему, добавьте [Патченный AppleAHCIPort.kext от Catalina](https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip) с выставленным MinKernel в значении 20.0.0
 
@@ -168,7 +168,7 @@ nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version
 
 ### Зависает на `Forcing CS_RUNTIME for entitlement`
 
-![Credit to Stompy for image](../../../img/extras/big-sur/readme/cs-stuck.jpg)
+![Благодарность Stompy за изображение](../../../img/extras/big-sur/readme/cs-stuck.jpg)
 
 На самом деле это та часть, где macOS запечатывает системный том и где может показаться, что macOS застряла. **НЕ ПЕРЕЗАГРУЖАЙТЕСЬ**, думая, что вы застряли, это займет некоторое время, иначе вы сломаете установку.
 
@@ -180,12 +180,12 @@ nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version
 
 ### Зависает на `ramrod`(^^^^^^^^^^^^^)
 
-![Credit to Notiflux for image](../../../img/extras/big-sur/readme/ramrod.jpg)
+![Благодарность Notiflux за изображение](../../../img/extras/big-sur/readme/ramrod.jpg)
 
 Если вы застряли на разделе `ramrod` (в частности, он загружается, выдаёт эту ошибку, и перезагружается снова в эту ошибку, вызывая цикл), это намекает, что ваш SMC эмулятор сломан. Чтобы исправить это, у вас есть 2 варианта:
 
-* Убедитесь, что вы используете последнии сборки VirtualSMC и Lilu, с помощью boot-arg `vsmcgen=1`
-* Переключитесь на [FakeSMC от Rehabman](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/) (вы можете использовать упомянутый выше трюк c `MinKernel`/`MaxKernel`, чтобы ограничить использование FakeSMC Big Sur'ом и выше)
+* Убедитесь, что вы используете последние сборки VirtualSMC и Lilu, с помощью boot-arg `vsmcgen=1`
+* Переключитесь на [FakeSMC от Rehabman](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/) (вы можете использовать упомянутый выше трюк с `MinKernel`/`MaxKernel`, чтобы ограничить использование FakeSMC Big Sur'ом и выше)
 
 И при переключении кекстов, убедитесь, что FakeSMC и VirtualSMC не включены одновременно в вашем config.plist, поскольку это вызывает конфликты.
 
@@ -302,7 +302,7 @@ softwareupdate -l
 
 #### Сломанный Seal
 
-C новыми снапшотами системного диска, теперь они сильно зависят от этого для правильного применения обновлений ОС. Поэтому, когда пломба (seal) диска сорвана, macOS откажется обновлять диск.
+С новыми снапшотами системного диска, теперь они сильно зависят от этого для правильного применения обновлений ОС. Поэтому, когда пломба (seal) диска сорвана, macOS откажется обновлять диск.
 
 Чтобы проверить себя, убедитесь, что `Snapshot Sealed` возвращает YES:
 
